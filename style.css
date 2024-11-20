@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(204, 90, 113);
+  overflow-x: hidden; /*Prevent scrolling*/
+
+  width: 100%;
+}
+
+/* header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+} */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  display: flex;
+  color: white;
+  padding: 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header .logo {
+  flex: 1;
+}
+
+header .tagline {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f2a900; /* Yellow color for a highlight effect */
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li a:hover {
+  /* Remove underline on hover */
+  text-decoration: none;
+}
+
+nav ul li a i {
+  margin-right: 8px; /* Adds space between icon and text */
+}
+
+.social-links {
+  display: flex;
+}
+
+.social-links .social-icon {
+  margin-left: 15px;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.social-links .social-icon i {
+  margin-right: 8px;
+}
+
+.social-links .social-icon:hover {
+  /* Remove underline on hover */
+  text-decoration: none;
+}
+/* about */
+/* General Section Styling */
+#about {
+  /* background-color: #fff; */
+  padding: 80px 500px;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.profile {
+  margin-bottom: 30px;
+}
+
+.profile-img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+
+  object-fit: cover;
+  animation: zoomIn 1s ease-in-out;
+}
+
+.profile h2 {
+  font-size: 2rem;
+  margin-top: 10px;
+  color: #333;
+}
+
+.intro {
+  font-size: 1.1rem;
+  color: black;
+  margin-top: 10px;
+}
+
+/* Card Container */
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* Card Styling */
+.card {
+  background-color: #fafafa;
+  padding: 20px;
+
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow for a lifting effect */
+  background-color: cornflowerblue; /* Optional: Change background color on hover */
+  color: navy; /* Optional: Change text color on hover */
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation Effects */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column; /* Stacks the elements vertically */
+    align-items: flex-start;
+  }
+
+  nav ul {
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .social-links {
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .intro {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header .tagline {
+    font-size: 1.2rem;
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+  }
+
+  .card h3 {
+    font-size: 1.2rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+}
